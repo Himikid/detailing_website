@@ -3,54 +3,243 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Scottish Auto Detailer mobile-first theme preview" />
-  <title>04 Neon Pop Detail | Scottish Auto Detailer Theme Preview</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Clean studio concept for Scottish Auto Detailer" />
+  <title>Theme 04 - Clean Studio | Scottish Auto Detailer</title>
+  <link rel="stylesheet" href="nav.css" />
   <script src="script.js" defer></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
+
+    :root {
+      --bg: #f4f8fb;
+      --paper: #ffffff;
+      --ink: #0f202e;
+      --muted: #4f6072;
+      --line: #d8e2ec;
+      --accent: #1279a8;
+      --accent-soft: #d9eef7;
+      --dark: #09131d;
+    }
+
+    body {
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 88% 6%, rgba(43, 153, 207, 0.16), transparent 30%),
+        radial-gradient(circle at 12% 90%, rgba(43, 153, 207, 0.12), transparent 34%),
+        var(--bg);
+      min-height: 100dvh;
+    }
+
+    main {
+      width: min(760px, 100% - 24px);
+      margin: 18px auto 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 8px 18px rgba(27, 51, 72, 0.08);
+    }
+
+    .topline {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #5a6d7f;
+      margin-bottom: 12px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.65rem, 6vw, 2.5rem);
+      line-height: 1.02;
+      max-width: 13ch;
+      text-wrap: balance;
+    }
+
+    .hero p {
+      margin: 10px 0 0;
+      max-width: 44ch;
+      color: var(--muted);
+      line-height: 1.48;
+      font-size: 0.95rem;
+    }
+
+    .row {
+      display: grid;
+      gap: 12px;
+    }
+
+    .card,
+    .cta {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--paper);
+      padding: 14px;
+    }
+
+    .card h2,
+    .cta h2 {
+      margin: 0;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .feature {
+      border-left: 4px solid var(--accent);
+      background: #f8fcff;
+      padding: 9px 10px;
+      margin-top: 10px;
+      border-radius: 0 10px 10px 0;
+    }
+
+    .feature b {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 0.9rem;
+    }
+
+    .feature span {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.42;
+    }
+
+    .quote {
+      margin-top: 10px;
+      border-radius: 12px;
+      padding: 12px;
+      background: linear-gradient(145deg, #f9fdff, #eef8fe);
+      border: 1px solid #d4e8f5;
+    }
+
+    .quote em {
+      display: block;
+      font-size: 0.92rem;
+      color: #2e4d64;
+      line-height: 1.5;
+      font-family: 'DM Serif Display', serif;
+    }
+
+    .quote span {
+      display: block;
+      margin-top: 7px;
+      font-size: 0.8rem;
+      color: #547088;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .cta {
+      background: linear-gradient(160deg, #ffffff, #f3f9fd);
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 10px 0 12px;
+    }
+
+    .meta span {
+      font-size: 0.75rem;
+      border-radius: 999px;
+      padding: 6px 9px;
+      border: 1px solid #bfd8e6;
+      color: #285772;
+      background: #e9f4fa;
+      font-weight: 700;
+    }
+
+    .links {
+      display: grid;
+      gap: 6px;
+    }
+
+    .links a {
+      color: #0f4f6f;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 10px 15px;
+      background: linear-gradient(120deg, var(--dark), var(--accent));
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.84rem;
+    }
+
+    @media (min-width: 760px) {
+      main {
+        margin-top: 28px;
+      }
+
+      .row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
 </head>
-<body class="theme-04 layout-poster">
-  <main class="page">
-    <section class="hero fade">
-      <div class="brand-row">
-        <div class="brand">Scottish Auto Detailer</div>
-        <span class="theme-chip">Bold Social Style</span>
-      </div>
-      <h1>Loud color, sharp sections, and a high-energy booking vibe.</h1>
-      <p>Built for attention in reels, stories, and quick taps from ad traffic.</p>
+<body>
+  <main>
+    <section class="hero">
+      <div class="topline"><span class="dot"></span> Concept 04 / Clean Studio</div>
+      <h1>Quiet confidence, premium clarity.</h1>
+      <p>A restrained, editorial mobile layout that feels professional and trustworthy for customers who value detail and consistency over noise.</p>
     </section>
 
-    <section class="panel fade">
-      <h2>Interior Valet</h2>
-      <ul><li>Steam and deep cleaning to lift dirt, bacteria, and odors from fabric and hard surfaces.</li><li>Ceramic interior detailer and protection for UV resistance and easier wipe-down maintenance.</li><li>Wet and dry vacuum across seats, carpets, and hard-to-reach spaces.</li><li>Air freshener finishing touch for a clean cabin scent.</li></ul>
-    </section>
-
-    <section class="services fade">
+    <section class="row">
       <article class="card">
-        <h3>Exterior Valet</h3>
-        <ul><li>Touchless pre-clean to loosen heavy dirt and traffic film before contact wash.</li><li>pH neutral shampoo wash that protects existing waxes and sealants.</li><li>Wheel cleaner to break down brake dust and road grime.</li><li>Wheel corrosion protector for ferrous metal durability.</li><li>Quick detailer for extra gloss and slickness.</li></ul>
+        <h2>Service Architecture</h2>
+        <div class="feature"><b>Interior Care</b><span>Steam deep-clean and ceramic interior protection for cleaner surfaces and better longevity.</span></div>
+        <div class="feature"><b>Exterior Care</b><span>Touchless pre-clean, pH neutral wash, and wheel treatment with corrosion defense.</span></div>
+        <div class="feature"><b>Final Protection</b><span>Wax seal and gloss-boost quick detailer for hydrophobic, polished finish.</span></div>
       </article>
+
       <article class="card">
-        <h3>Protection Finish</h3>
-        <ul><li>Wax seal and shine spray layer for hydrophobic paint protection.</li><li>Deeper gloss look with easier rinse-off maintenance.</li><li>Designed to keep the vehicle looking fresher between visits.</li></ul>
+        <h2>Client Perception</h2>
+        <div class="quote">
+          <em>"This looks like a premium local business I can trust with my car."</em>
+          <span>Expected first impression</span>
+        </div>
+        <div class="quote">
+          <em>"The booking info is clear in under 10 seconds on mobile."</em>
+          <span>Conversion behavior goal</span>
+        </div>
       </article>
     </section>
 
-    <section class="panel fade">
-      <h2>Visual Notes</h2>
-      <div class="panel"><h3>Poster Layout Direction</h3><ul><li>Big top banner and punchy headline stack.</li><li>Simple body cards to keep legibility clean.</li><li>Strong CTA contrast so contact actions stand out.</li></ul></div>
-    </section>
-
-    <section class="cta fade">
-      <h2>Book Your Remote Valet</h2>
-      <p class="small">Elevate your drive and keep your vehicle road-ready with premium interior and exterior care.</p>
-      <div class="tag-row">
-        <span class="tag">High Impact</span><span class="tag">Social Ready</span><span class="tag">Young Audience</span><span class="tag">Standout</span>
-      </div>
-      <div class="contact">
+    <section class="cta">
+      <h2>Book Scottish Auto Detailer</h2>
+      <div class="meta"><span>Mobile service</span><span>Interior + exterior</span><span>Protection finish</span></div>
+      <div class="links">
         <a href="tel:07377103417">Call: 07377103417</a>
         <a href="mailto:scottishautodetailer@gmail.com">Email: scottishautodetailer@gmail.com</a>
       </div>
-      <a class="pill-btn" href="tel:07377103417">Call To Book</a>
+      <a class="btn" href="tel:07377103417">Request Valet Slot</a>
     </section>
   </main>
 

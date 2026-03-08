@@ -1,22 +1,28 @@
 # Scottish Auto Detailer Theme Preview
 
-Mobile-first frontend concept pack for Scottish Auto Detailer.
+Curated mobile-first frontend concept pack for Scottish Auto Detailer.
 
-## What is included
+## Included now
 
-- 12 distinct theme pages (`theme-01.html` to `theme-12.html`)
-- 1 theme hub page (`index.html`)
-- Sticky bottom navigation to switch themes quickly
-- Shared service and contact content across all themes
+- 5 fully distinct concept pages:
+  - `theme-01.html` Hypergloss (neon performance)
+  - `theme-02.html` Prestige (luxury editorial)
+  - `theme-03.html` Rally Grid (garage utility)
+  - `theme-04.html` Clean Studio (minimal trust)
+  - `theme-05.html` Street Poster (bold expressive)
+- 1 hub page: `index.html`
+- Sticky bottom theme switcher on every page
+- Real business content and contact details embedded in each concept
 
 ## Run locally
 
 Open `index.html` in your browser.
 
-For best preview, use mobile device mode in browser dev tools.
+For best review, use mobile device mode in browser dev tools.
 
-## Files
+## Key files
 
-- `styles.css`: shared visual system, motion, and all theme palettes/layout rules
-- `script.js`: sticky bottom nav builder and active-theme highlighting
-- `generate-pages.mjs`: generator used to create/update theme pages quickly
+- `index.html`: concept hub and entry point
+- `theme-01.html` to `theme-05.html`: curated theme candidates
+- `nav.css`: shared bottom navigation styling
+- `script.js`: shared bottom navigation links and active-state logic

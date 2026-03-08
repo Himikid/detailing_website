@@ -3,54 +3,246 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Scottish Auto Detailer mobile-first theme preview" />
-  <title>03 Emerald Studio | Scottish Auto Detailer Theme Preview</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Rally grid concept for Scottish Auto Detailer" />
+  <title>Theme 03 - Rally Grid | Scottish Auto Detailer</title>
+  <link rel="stylesheet" href="nav.css" />
   <script src="script.js" defer></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@500;700;800&display=swap');
+
+    :root {
+      --bg: #101216;
+      --panel: #171b24;
+      --text: #f4f6fb;
+      --muted: #b4bed5;
+      --line: #2b3240;
+      --blue: #3c7cff;
+      --red: #ff4d4d;
+      --cream: #fff5df;
+    }
+
+    body {
+      color: var(--text);
+      background:
+        linear-gradient(135deg, transparent 24%, rgba(255, 255, 255, 0.03) 24%, rgba(255, 255, 255, 0.03) 25%, transparent 25%, transparent 74%, rgba(255, 255, 255, 0.03) 74%, rgba(255, 255, 255, 0.03) 75%, transparent 75%),
+        linear-gradient(155deg, #0a0d14, #141a25 65%, #1b2231);
+      background-size: 24px 24px, cover;
+      min-height: 100dvh;
+    }
+
+    main {
+      width: min(900px, 100% - 18px);
+      margin: 10px auto 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .hero {
+      border: 2px solid #2a3345;
+      background: linear-gradient(165deg, #131925, #1c2637);
+      border-radius: 14px;
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: 'RALLY SPEC';
+      position: absolute;
+      top: 10px;
+      right: -40px;
+      background: var(--red);
+      color: #fff;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      font-weight: 800;
+      padding: 5px 44px;
+      transform: rotate(28deg);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(1.5rem, 7vw, 2.45rem);
+      line-height: 0.96;
+      max-width: 12ch;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      max-width: 38ch;
+    }
+
+    .strip {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      scrollbar-width: none;
+    }
+
+    .strip::-webkit-scrollbar { display: none; }
+
+    .tag {
+      flex: 0 0 auto;
+      border-radius: 8px;
+      padding: 7px 10px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: 1px solid #3a4458;
+      color: #c8d5f2;
+      background: #1a2230;
+    }
+
+    .layout {
+      display: grid;
+      gap: 10px;
+    }
+
+    .box {
+      border: 2px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel);
+      padding: 12px;
+    }
+
+    .box h2 {
+      margin: 0 0 8px;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .service {
+      border: 1px solid #333f57;
+      border-left: 4px solid var(--blue);
+      border-radius: 8px;
+      padding: 9px;
+      background: #121926;
+      margin-bottom: 8px;
+    }
+
+    .service strong {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 4px;
+      color: #e6eeff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .service span {
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.4;
+    }
+
+    .gauge {
+      display: grid;
+      gap: 8px;
+    }
+
+    .bar {
+      display: grid;
+      gap: 5px;
+    }
+
+    .bar label {
+      font-size: 0.77rem;
+      text-transform: uppercase;
+      color: #c6d3ef;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+    }
+
+    .track {
+      height: 9px;
+      border-radius: 999px;
+      background: #293145;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--red), #ff9b54);
+    }
+
+    .contacts {
+      display: grid;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .contacts a {
+      color: #e4edff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      color: #0f141e;
+      background: linear-gradient(95deg, var(--cream), #ffd88b);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    @media (min-width: 760px) {
+      main { margin-top: 20px; }
+      .layout { grid-template-columns: 1.25fr 0.75fr; }
+    }
+  </style>
 </head>
-<body class="theme-03 layout-dual">
-  <main class="page">
-    <section class="hero fade">
-      <div class="brand-row">
-        <div class="brand">Scottish Auto Detailer</div>
-        <span class="theme-chip">Eco-Clean Aesthetic</span>
-      </div>
-      <h1>A cleaner look for a cleaner cabin and paint finish.</h1>
-      <p>Green-forward visual language for clients who value freshness and safe wash products.</p>
+<body>
+  <main>
+    <section class="hero">
+      <h1>Garage-grade detail. Road-show finish.</h1>
+      <p>This concept is built for impact and speed: punchy hierarchy, clear service blocks, and conversion-first controls.</p>
     </section>
 
-    <section class="panel fade">
-      <h2>Interior Valet</h2>
-      <ul><li>Steam and deep cleaning to lift dirt, bacteria, and odors from fabric and hard surfaces.</li><li>Ceramic interior detailer and protection for UV resistance and easier wipe-down maintenance.</li><li>Wet and dry vacuum across seats, carpets, and hard-to-reach spaces.</li><li>Air freshener finishing touch for a clean cabin scent.</li></ul>
+    <section class="strip">
+      <span class="tag">Concept 03</span>
+      <span class="tag">Fast Scan UI</span>
+      <span class="tag">Motorsport Personality</span>
+      <span class="tag">Mobile Conversion Focus</span>
     </section>
 
-    <section class="services fade">
-      <article class="card">
-        <h3>Exterior Valet</h3>
-        <ul><li>Touchless pre-clean to loosen heavy dirt and traffic film before contact wash.</li><li>pH neutral shampoo wash that protects existing waxes and sealants.</li><li>Wheel cleaner to break down brake dust and road grime.</li><li>Wheel corrosion protector for ferrous metal durability.</li><li>Quick detailer for extra gloss and slickness.</li></ul>
+    <section class="layout">
+      <article class="box">
+        <h2>Core Service Stack</h2>
+        <div class="service"><strong>Interior Attack</strong><span>Steam deep-clean plus ceramic interior guard and full wet/dry vacuum pass.</span></div>
+        <div class="service"><strong>Exterior Decon</strong><span>Touchless pre-clean, pH neutral wash, wheel cleaner, and corrosion shielding.</span></div>
+        <div class="service"><strong>Finish Layer</strong><span>Spray wax sealant and quick detailer for hydrophobic gloss that lasts.</span></div>
       </article>
-      <article class="card">
-        <h3>Protection Finish</h3>
-        <ul><li>Wax seal and shine spray layer for hydrophobic paint protection.</li><li>Deeper gloss look with easier rinse-off maintenance.</li><li>Designed to keep the vehicle looking fresher between visits.</li></ul>
+
+      <article class="box">
+        <h2>Result Profile</h2>
+        <div class="gauge">
+          <div class="bar"><label>Gloss pop</label><div class="track"><div class="fill" style="width: 90%"></div></div></div>
+          <div class="bar"><label>Cabin freshness</label><div class="track"><div class="fill" style="width: 95%"></div></div></div>
+          <div class="bar"><label>Protection hold</label><div class="track"><div class="fill" style="width: 84%"></div></div></div>
+        </div>
+        <div class="contacts">
+          <a href="tel:07377103417">Call: 07377103417</a>
+          <a href="mailto:scottishautodetailer@gmail.com">Email: scottishautodetailer@gmail.com</a>
+        </div>
+        <a class="btn" href="tel:07377103417">Book Pit Stop</a>
       </article>
-    </section>
-
-    <section class="panel fade">
-      <h2>Why It Works On Mobile</h2>
-      <div class="grid-two"><div class="panel"><h3>Thumb-Friendly</h3><p class="small">Large tap targets and tighter text blocks make browsing quick from social links.</p></div><div class="panel"><h3>Quick Scanning</h3><p class="small">Clear section breaks, bold headings, and direct contact routes reduce drop-off.</p></div></div>
-    </section>
-
-    <section class="cta fade">
-      <h2>Book Your Remote Valet</h2>
-      <p class="small">Elevate your drive and keep your vehicle road-ready with premium interior and exterior care.</p>
-      <div class="tag-row">
-        <span class="tag">Soft Eco Vibe</span><span class="tag">Fresh Finish</span><span class="tag">Balanced Contrast</span><span class="tag">Modern</span>
-      </div>
-      <div class="contact">
-        <a href="tel:07377103417">Call: 07377103417</a>
-        <a href="mailto:scottishautodetailer@gmail.com">Email: scottishautodetailer@gmail.com</a>
-      </div>
-      <a class="pill-btn" href="tel:07377103417">Call To Book</a>
     </section>
   </main>
 
