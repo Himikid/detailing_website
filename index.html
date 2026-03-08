@@ -3,245 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Curated mobile-first design concepts for Scottish Auto Detailer" />
+  <meta name="description" content="Premium theme concepts for Scottish Auto Detailer" />
   <title>Theme Hub | Scottish Auto Detailer</title>
-  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="site.css" />
   <script src="script.js" defer></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Syne:wght@700;800&display=swap');
-
-    :root {
-      --bg: #060d1b;
-      --bg-soft: #111d36;
-      --card: rgba(16, 27, 49, 0.8);
-      --text: #eaf2ff;
-      --muted: #9bb0d2;
-      --line: rgba(255, 255, 255, 0.12);
-      --accent: #5ec8ff;
-      --accent-2: #ff9d5c;
-    }
-
-    body {
-      min-height: 100dvh;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 12% 10%, #1a3768, transparent 40%),
-        radial-gradient(circle at 85% 20%, #3d275f, transparent 34%),
-        linear-gradient(165deg, var(--bg) 15%, #081428 70%, #0b1325 100%);
-    }
-
-    main {
-      width: min(940px, 100% - 26px);
-      margin: 20px auto;
-      display: grid;
-      gap: 14px;
-    }
-
-    .hero {
-      border: 1px solid var(--line);
-      background: linear-gradient(150deg, rgba(9, 22, 44, 0.94), rgba(9, 28, 58, 0.7));
-      border-radius: 24px;
-      padding: 20px;
-      box-shadow: 0 20px 44px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(99, 209, 255, 0.3), transparent 72%);
-      top: -50px;
-      right: -20px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      font-family: 'Sora', sans-serif;
-      font-size: 0.76rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 6px 10px;
-      color: #c5dbff;
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    h1 {
-      margin: 14px 0 10px;
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(1.7rem, 6vw, 2.5rem);
-      line-height: 1.05;
-      text-wrap: balance;
-      max-width: 16ch;
-    }
-
-    .hero p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 45ch;
-      font-size: 0.98rem;
-    }
-
-    .grid {
-      display: grid;
-      gap: 12px;
-    }
-
-    .card {
-      border: 1px solid var(--line);
-      background: var(--card);
-      border-radius: 20px;
-      padding: 16px;
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
-    }
-
-    .top {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .num {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.2rem;
-      color: #b7cdff;
-    }
-
-    .pill {
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-size: 0.74rem;
-      font-weight: 700;
-      background: rgba(255, 255, 255, 0.08);
-      color: #dbe8ff;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-
-    h2 {
-      margin: 0;
-      font-family: 'Syne', sans-serif;
-      font-size: 1.18rem;
-    }
-
-    .desc {
-      margin: 8px 0 12px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-bottom: 12px;
-    }
-
-    .chip {
-      border-radius: 999px;
-      background: rgba(94, 200, 255, 0.14);
-      border: 1px solid rgba(94, 200, 255, 0.3);
-      color: #c4e9ff;
-      padding: 6px 9px;
-      font-size: 0.73rem;
-      font-weight: 700;
-    }
-
-    .cta {
-      display: inline-block;
-      text-decoration: none;
-      border-radius: 999px;
-      padding: 10px 14px;
-      background: linear-gradient(120deg, var(--accent), var(--accent-2));
-      color: #06142a;
-      font-weight: 800;
-      font-size: 0.83rem;
-      letter-spacing: 0.01em;
-    }
-
-    .foot {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 14px;
-      color: #cadeff;
-      background: rgba(255, 255, 255, 0.03);
-      font-size: 0.87rem;
-    }
-
-    @media (min-width: 760px) {
-      main {
-        margin-top: 30px;
-      }
-
-      .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .card:last-child {
-        grid-column: 1 / -1;
-      }
-    }
-  </style>
 </head>
-<body>
-  <main>
-    <section class="hero">
-      <span class="eyebrow">Scottish Auto Detailer</span>
-      <h1>5 Curated Mobile Concepts To Choose Your Brand Direction</h1>
-      <p>Each concept uses a different visual system, tone, and layout logic so your friend can pick a real design identity, not just a color variation.</p>
-    </section>
+<body class="hub" data-theme="hub">
+  <main class="site-wrap">
+    <header class="hero hub-hero">
+      <p class="eyebrow">Theme Hub</p>
+      <h1>5 professional concepts, each split into focused subpages.</h1>
+      <p class="lead">Use the bottom navigation to switch themes and the local tab navigation to inspect each theme's structure.</p>
+    </header>
 
-    <section class="grid">
-      <article class="card">
-        <div class="top"><span class="num">01</span><span class="pill">Hypergloss</span></div>
-        <h2>Midnight + Neon Performance</h2>
-        <p class="desc">High-energy launch style with glow accents, live-stat blocks, and slick motion tone.</p>
-        <div class="chips"><span class="chip">Aggressive</span><span class="chip">High Contrast</span><span class="chip">Instagram Ready</span></div>
-        <a class="cta" href="theme-01.html">Open Concept 01</a>
+    <section class="hub-grid">
+      
+      <article class="theme-card theme-01">
+        <p class="theme-id">Concept 01</p>
+        <h2>Heritage Blue</h2>
+        <p>A sharp blue-led identity inspired by the existing brand while removing visual noise.</p>
+        <div class="theme-links">
+          <a href="theme-01-overview.html">Open Overview</a>
+          <a href="theme-01-services.html">Services</a>
+          <a href="theme-01-process.html">Process</a>
+          <a href="theme-01-contact.html">Contact</a>
+        </div>
       </article>
-
-      <article class="card">
-        <div class="top"><span class="num">02</span><span class="pill">Prestige</span></div>
-        <h2>Luxury Atelier Booking</h2>
-        <p class="desc">Elegant typography, premium spacing, and refined service storytelling for higher-ticket clients.</p>
-        <div class="chips"><span class="chip">Luxury</span><span class="chip">Elegant</span><span class="chip">Premium Tone</span></div>
-        <a class="cta" href="theme-02.html">Open Concept 02</a>
+    
+      <article class="theme-card theme-02">
+        <p class="theme-id">Concept 02</p>
+        <h2>Ivory Prestige</h2>
+        <p>Soft ivory surfaces, elegant typography, and calm spacing for high-ticket perception.</p>
+        <div class="theme-links">
+          <a href="theme-02-overview.html">Open Overview</a>
+          <a href="theme-02-services.html">Services</a>
+          <a href="theme-02-process.html">Process</a>
+          <a href="theme-02-contact.html">Contact</a>
+        </div>
       </article>
-
-      <article class="card">
-        <div class="top"><span class="num">03</span><span class="pill">Rally Grid</span></div>
-        <h2>Bold Garage Utility</h2>
-        <p class="desc">Chunky blocks and racing cues designed for fast scanning and direct conversion.</p>
-        <div class="chips"><span class="chip">Masculine</span><span class="chip">Performance</span><span class="chip">Fast Scan</span></div>
-        <a class="cta" href="theme-03.html">Open Concept 03</a>
+    
+      <article class="theme-card theme-03">
+        <p class="theme-id">Concept 03</p>
+        <h2>Slate Studio</h2>
+        <p>A controlled slate palette that feels dependable, mature, and conversion-focused.</p>
+        <div class="theme-links">
+          <a href="theme-03-overview.html">Open Overview</a>
+          <a href="theme-03-services.html">Services</a>
+          <a href="theme-03-process.html">Process</a>
+          <a href="theme-03-contact.html">Contact</a>
+        </div>
       </article>
-
-      <article class="card">
-        <div class="top"><span class="num">04</span><span class="pill">Clean Studio</span></div>
-        <h2>Minimal Editorial Trust</h2>
-        <p class="desc">Calm whitespace approach for clients who value clarity, professionalism, and confidence.</p>
-        <div class="chips"><span class="chip">Minimal</span><span class="chip">Modern</span><span class="chip">Calm</span></div>
-        <a class="cta" href="theme-04.html">Open Concept 04</a>
+    
+      <article class="theme-card theme-04">
+        <p class="theme-id">Concept 04</p>
+        <h2>Alpine Reserve</h2>
+        <p>Muted natural tones and generous whitespace for a clean, composed impression.</p>
+        <div class="theme-links">
+          <a href="theme-04-overview.html">Open Overview</a>
+          <a href="theme-04-services.html">Services</a>
+          <a href="theme-04-process.html">Process</a>
+          <a href="theme-04-contact.html">Contact</a>
+        </div>
       </article>
-
-      <article class="card">
-        <div class="top"><span class="num">05</span><span class="pill">Street Poster</span></div>
-        <h2>Playful Urban Personality</h2>
-        <p class="desc">Layered stickers, vivid gradients, and expressive headlines for unforgettable first impression.</p>
-        <div class="chips"><span class="chip">Distinctive</span><span class="chip">Youthful</span><span class="chip">Memorable</span></div>
-        <a class="cta" href="theme-05.html">Open Concept 05</a>
+    
+      <article class="theme-card theme-05">
+        <p class="theme-id">Concept 05</p>
+        <h2>Monarch Mono</h2>
+        <p>High-contrast monochrome visual language for a timeless premium aesthetic.</p>
+        <div class="theme-links">
+          <a href="theme-05-overview.html">Open Overview</a>
+          <a href="theme-05-services.html">Services</a>
+          <a href="theme-05-process.html">Process</a>
+          <a href="theme-05-contact.html">Contact</a>
+        </div>
       </article>
-    </section>
-
-    <section class="foot">
-      Content across all concepts includes your real offer: interior steam deep-clean, exterior valet, protection finish, and direct contact via 07377103417 / scottishautodetailer@gmail.com.
+    
     </section>
   </main>
 
